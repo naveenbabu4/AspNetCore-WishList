@@ -1,0 +1,18 @@
+﻿@model List<WishList.Models.Item>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>WishList</h1>
+
+<p>
+    <a asp-action="Create">Add Item</a>
+</p>
+
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>@item.Description <a asp-action="delete" asp-route-id="@item.Id">delete</a></li>
+    }
+    </ul>
